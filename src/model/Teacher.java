@@ -71,7 +71,7 @@ public class Teacher extends Persion{
 
     @Override
     public String toString() {
-        return "model.Teacher{" +
+        return "Teacher{" +
                 "teacherId=" + teacherId +
                 ", teacherName='" + teacherName + '\'' +
                 ", numberPhone='" + numberPhone + '\'' +

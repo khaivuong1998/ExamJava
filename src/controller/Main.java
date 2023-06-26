@@ -20,19 +20,17 @@ public class Main {
                 "2.List Teacher" +
                 "3.Add Student" +
                 "4.Add teacher" +
-                "5.Salary Teacher" +
-                "6.AVG Student" +
-                "7.Sort Students By Grade" +
-                "8.Sort Students By Name" +
-                "9.Exit");
+                "5.Sort Students By Grade" +
+                "6.Sort Students By Name" +
+                "7.Exit");
         System.out.println("Mời nhập yêu cầu:");
         int number = Integer.parseInt(scanner.next());
         switch (number) {
             case 1:
-                studentRepository.findAll();
+                System.out.println(studentRepository.findAll());
                 break;
             case 2:
-                teacherRepository.findAll();
+                System.out.println(teacherRepository.findAll());
                 break;
             case 3:
                 System.out.println("Mời nhập thông tin sinh viên");
@@ -71,26 +69,12 @@ public class Main {
                 teacherRepository.add(teacher);
                 break;
             case 5:
-                System.out.println("nhập tên giáo viên muốn tìm");
-                String nameTeacher = scanner.next();
-                if (nameTeacher.equals(teacherRepository.findAll())) {
-//                    System.out.println(teacherRepository.getSalary(nameTeacher));
-                }
+                System.out.println(studentRepository.sortByGrade());
                 break;
             case 6:
-                System.out.println("mời nhập sinh viên cần tìm");
-                String nameStudent = scanner.next();
-                if (nameStudent.equals(studentRepository.findAll())) {
-//                    System.out.println(studentRepository.avgMark(nameStudent));
-                }
+                System.out.println(teacherRepository.sortByName());
                 break;
             case 7:
-                studentRepository.sortByGrade();
-                break;
-            case 8:
-                teacherRepository.sortByName();
-                break;
-            case 9:
                 System.exit(0);
                 break;
             default:
