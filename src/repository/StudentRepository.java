@@ -1,12 +1,9 @@
 package repository;
 
-import Service.IStudentService;
+import service.IStudentService;
 import model.Student;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class StudentRepository implements IStudentService {
     //    private IStudentService iStudentService = new StudentRepository();
@@ -22,6 +19,28 @@ public class StudentRepository implements IStudentService {
     @Override
     public void add(Student student) {
         studentList.add(student);
+    }
+
+    public Student getStudent() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Mời nhập thông tin sinh viên");
+        System.out.println("Mời nhập id");
+        int studentID = Integer.parseInt(scanner.next());
+        System.out.println("mời nhập tên");
+        String studentName = scanner.next();
+        System.out.println("mời nhập sdt");
+        String numberPhone = scanner.next();
+        System.out.println("mời nhập địa chỉ");
+        String address = scanner.next();
+        System.out.println("mời nhập lô hàng");
+        String batch = scanner.next();
+        System.out.println("mời nhập điểm toán 1");
+        double mark1 = Double.parseDouble(scanner.next());
+        System.out.println("mời nhập điểm toán 2");
+        double mark2 = Double.parseDouble(scanner.next());
+        Student student = new Student(studentID, studentName, numberPhone, address, batch, mark1, mark2);
+        studentList.add(student);
+        return student;
     }
 
     @Override

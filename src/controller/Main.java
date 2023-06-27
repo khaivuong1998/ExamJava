@@ -33,40 +33,10 @@ public class Main {
                 System.out.println(teacherRepository.findAll());
                 break;
             case 3:
-                System.out.println("Mời nhập thông tin sinh viên");
-                System.out.println("Mời nhập id");
-                int studentID = Integer.parseInt(scanner.next());
-                System.out.println("mời nhập tên");
-                String studentName = scanner.next();
-                System.out.println("mời nhập sdt");
-                String numberPhone = scanner.next();
-                System.out.println("mời nhập địa chỉ");
-                String address = scanner.next();
-                System.out.println("mời nhập lô hàng");
-                String batch = scanner.next();
-                System.out.println("mời nhập điểm toán 1");
-                double mark1 = Double.parseDouble(scanner.next());
-                System.out.println("mời nhập điểm toán 2");
-                double mark2 = Double.parseDouble(scanner.next());
-                Student student = new Student(studentID, studentName, numberPhone, address, batch, mark1, mark2);
-                studentRepository.add(student);
+                studentRepository.getStudent();
                 break;
             case 4:
-                System.out.println("Mời nhập thông tin giáo viên");
-                System.out.println("Mời nhập id");
-                int teacherID = Integer.parseInt(scanner.next());
-                System.out.println("mời nhập tên");
-                String teacherName = scanner.next();
-                System.out.println("mời nhập sdt");
-                String numberPhone1 = scanner.next();
-                System.out.println("mời nhập địa chỉ");
-                String address1 = scanner.next();
-                System.out.println("mời nhập lương");
-                double salary = Double.parseDouble(scanner.next());
-                System.out.println("mời nhập số ngày làm việc");
-                int numberWorkDay = Integer.parseInt(scanner.next());
-                Teacher teacher = new Teacher(teacherID, teacherName, numberPhone1, address1, salary, numberWorkDay);
-                teacherRepository.add(teacher);
+                teacherRepository.getTeacher();
                 break;
             case 5:
                 System.out.println(studentRepository.sortByGrade());

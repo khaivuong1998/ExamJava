@@ -1,6 +1,6 @@
 package repository;
 
-import Service.ITeacherService;
+import service.ITeacherService;
 import model.Teacher;
 
 import java.util.*;
@@ -19,6 +19,26 @@ public class TeacherRepository implements ITeacherService {
     @Override
     public void add(Teacher teacher) {
         teacherList.add(teacher);
+    }
+
+    public Teacher getTeacher() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Mời nhập thông tin giáo viên");
+        System.out.println("Mời nhập id");
+        int teacherID = Integer.parseInt(scanner.next());
+        System.out.println("mời nhập tên");
+        String teacherName = scanner.next();
+        System.out.println("mời nhập sdt");
+        String numberPhone1 = scanner.next();
+        System.out.println("mời nhập địa chỉ");
+        String address1 = scanner.next();
+        System.out.println("mời nhập lương");
+        double salary = Double.parseDouble(scanner.next());
+        System.out.println("mời nhập số ngày làm việc");
+        int numberWorkDay = Integer.parseInt(scanner.next());
+        Teacher teacher = new Teacher(teacherID, teacherName, numberPhone1, address1, salary, numberWorkDay);
+        teacherList.add(teacher);
+        return teacher;
     }
 
     @Override
